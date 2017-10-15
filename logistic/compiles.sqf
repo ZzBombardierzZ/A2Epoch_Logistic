@@ -14,13 +14,13 @@ if (!isDedicated) then {
 			_object = (_this select 0);
 			_object setVelocity [0,0,0];
 			detach _object;
-			if (!isNil "dayz_zombieSpeak" && !isNil "dayz_HungerThirst" && !isNil "player_alertZombies" ) then {			
-				PVDZE_veh_Update = [_object,"all"];
-				publicVariableServer "PVDZE_veh_Update";
-				[10,10] call dayz_HungerThirst;
+			if (!isNil "dayz_zombieSpeak" && !isNil "dayz_NutritionSystem" && !isNil "player_alertZombies" ) then {
+				[_object,"position",true] call server_updateObject;
+				["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
 				player playActionNow "Medic";
 				[player,"repair",0,false,20] call dayz_zombieSpeak;
 				[player,20,true,(getPosATL player)] spawn player_alertZombies;
+				diag_log format [STR_LOG_UNTOWED, typeOf _object];
 			}else{
 				player playActionNow "Medic";
 			};
@@ -80,9 +80,7 @@ if (!isDedicated) then {
 				_message = _this select 0;
 				_color = _this select 1;
 				taskHint [format[_message], _color, "taskNew"];
-				cutText [_message,"PLAIN",0];
-				sleep 5;
-				cutText ["","PLAIN",0];
+				_message call dayz_rollingMessages;
 			};
 	
 LOG_READY = true;
