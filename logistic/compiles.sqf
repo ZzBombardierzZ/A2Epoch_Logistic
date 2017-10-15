@@ -40,7 +40,7 @@ if (!isDedicated) then {
 		private ["_return","_target"];
 		_target = (_this select 0);
 		_return = true; 
-		if !(LOG_CFG_ALLOW_CHAINING) then  { 	
+		if !(LOG_CFG_ALLOW_CHAINING) then  { 
 			if ( ( (_this select 1) == 1 ) && !( isNull (_target getVariable "LOG_moves_by") || (!alive (_target getVariable "LOG_moves_by")) ) ) then {_return = false;};	
 			if ( (_this select 1) == 2 && !isNull (_target getVariable "LOG_trailer") ) then { _return = false;};
 		};
