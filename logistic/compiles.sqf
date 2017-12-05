@@ -14,16 +14,17 @@ if (!isDedicated) then {
 			_object = (_this select 0);
 			_object setVelocity [0,0,0];
 			detach _object;
-			if (!isNil "dayz_zombieSpeak" && !isNil "dayz_NutritionSystem" && !isNil "player_alertZombies" ) then {
-				[_object,"position",true] call server_updateObject;
-				["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
-				player playActionNow "Medic";
-				[player,"repair",0,false,20] call dayz_zombieSpeak;
-				[player,20,true,(getPosATL player)] spawn player_alertZombies;
-				diag_log format [STR_LOG_UNTOWED, typeOf _object];
-			}else{
-				player playActionNow "Medic";
+			PVDZ_veh_Save = [_object,"position",true];
+			if (isServer) then {
+				PVDZ_veh_Save call server_updateObject;
+			} else {
+				publicVariableServer "PVDZ_veh_Save";
 			};
+			["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
+			player playActionNow "Medic";
+			[player,"repair",0,false,20] call dayz_zombieSpeak;
+			[player,20,true,(getPosATL player)] spawn player_alertZombies;
+			diag_log format [STR_LOG_UNTOWED, typeOf _object];
 	};
 
 	LOG_FNCT_LOCKED = { 
