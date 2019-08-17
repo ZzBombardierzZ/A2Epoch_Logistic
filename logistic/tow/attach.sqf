@@ -22,7 +22,7 @@ LOG_INPROGRESS = true;
 					
 					player setDir 270;
 					player setPos (getPos player);
-					
+					[player,"repair",0,false,20] call dayz_zombieSpeak;
 					player playActionNow "Medic";
 					sleep 2;
 				
