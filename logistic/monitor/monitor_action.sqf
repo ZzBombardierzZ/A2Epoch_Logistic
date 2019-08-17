@@ -4,14 +4,14 @@ while {true} do{
 	LOG_OBJECT_ADDACTION = objNull;
 	_target = cursorTarget;
 	
-	if ( !(isNull _target) && ( player distance _target < 13 ) ) then{		
+	if ( !(isNull _target) && ( player distance _target < 13 ) ) then{
 		LOG_OBJECT_ADDACTION = _target;
 			
 			if ({_target isKindOf _x} count LOG_CFG_ISTOWABLE > 0) then {
 				LOG_OBJECT_TRAILER_VALID = (vehicle player == player && (alive _target) && (count crew _target == 0) &&
 						isNull LOG_OBJECT_MOVES && isNull (_target getVariable "LOG_moves_by") &&
 						(isNull (_target getVariable "LOG_moves_by") || (!alive (_target getVariable "LOG_moves_by"))) &&
-						!(_target getVariable "LOG_disabled") && ( [_target] call LOG_FNCT_LOCKED ) && ( [_target,2] call LOG_FNCT_CHAINING ) );	
+						!(_target getVariable "LOG_disabled") && ( [_target] call LOG_FNCT_LOCKED ) && ( [_target,2] call LOG_FNCT_CHAINING ) );
 						
 				LOG_DETACH_VALID = ( vehicle player == player && (isNull LOG_OBJECT_MOVES) && !isNull (_target getVariable "LOG_moves_by") && !(_target getVariable "LOG_disabled") );
 			};

@@ -11,7 +11,7 @@ _moves_by = _object getVariable "LOG_moves_by";
 if (isNil "_moves_by") then{_object setVariable ["LOG_moves_by", objNull, false];};
 
 if !(LOG_CFG_ALLOW_GETIN) then {
-		_object addEventHandler ["GetIn",{		
+	_object addEventHandler ["GetIn",{
 		if (_this select 2 == player) then{
 			_this spawn{
 				private ["_eject"];
