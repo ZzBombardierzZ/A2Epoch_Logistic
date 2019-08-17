@@ -1,16 +1,15 @@
 
 LOG_CFG_lANG = "en"; 				/*  en = english , de = german , fr = french  */
 LOG_CFG_ALLOW_LOCKED = false;	 	/* allow to transport locked vehicles */
-LOG_CFG_ALLOW_CHAINING = false; 	/* allow chain towing  */
-LOG_CFG_ALLOW_GETIN = false; 		/* allow player to get into a towed / lifted object  */
-
+LOG_CFG_ALLOW_CHAINING = true; 	/* allow chain towing  */
+LOG_CFG_ALLOW_GETIN = true; 		/* allow player to get into a towed / lifted object  */
 
 /*--------------------------------------------------------------------------------------------------------------
 	LIST OF VEHICLES WHERE CAN TOW
 ---------------------------------------------------------------------------------------------------------------*/ 
 
 LOG_CFG_CANTOW=[
-"Car","Tank","Ship"
+"Car","Tank","Ship","Motorcycle","ReammoBox_EP1"
 ];
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -18,7 +17,7 @@ LOG_CFG_CANTOW=[
 ---------------------------------------------------------------------------------------------------------------*/ 
 
 LOG_CFG_ISTOWABLE=[	
-"Car","Tank","Air","Ship","StaticWeapon","ReammoBox_EP1"
+"Car","Tank","Air","Ship","ReammoBox_EP1"
 ];
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -34,5 +33,5 @@ LOG_CFG_CANLIFT=[
 ---------------------------------------------------------------------------------------------------------------*/ 
 
 LOG_CFG_ISLIFTABLE=[
-"Car","Tank","Air","Ship"
+"Car","Tank","Air","Ship","Motorcycle"
 ];
