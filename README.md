@@ -36,6 +36,7 @@ enjoy  &&  have fun
 - Most boats are considered 'medium' cars
 
 Bomb install notes:
+- This guide doesn't cover battleye filters
 - Install logistic like normal (instructions above)
 - Install https://github.com/oiad/communityLocalizations if you haven't already.
 - Add the following below `<Project name="DayZ Community">`
