@@ -19,14 +19,14 @@ A SPECIAL THANKS GOES TO
 
 2.)  open the "init.sqf" in your mission folder and add following on the top, after:   
 
-"call compile preprocessFileLineNumbers "server_traders.sqf"; "
+`call compile preprocessFileLineNumbers "server_traders.sqf"; `
 
-THIS====>>   call compile preprocessFileLineNumbers "logistic\init.sqf";   <<<=========
+THIS====>>   `call compile preprocessFileLineNumbers "logistic\init.sqf"; `  <<<=========
 	
 	
 enjoy  &&  have fun
 
-#Bomb's changes:
+# Bomb's changes:
 - Adds tiers of vehicles by estimated weight such as Large, Medium, Small, and Tiny for Ground and Air vehicles.
 - A vehicle can tow anything of it's own size or smaller. So a Large ground vehicle can tow any ground vehicle. A medium vehicle like an SUV can only tow other medium vehicles and smaller.
 - A tank can tow any ground vehicle BUT can not be lifted
