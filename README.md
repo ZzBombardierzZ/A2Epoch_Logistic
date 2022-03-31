@@ -52,4 +52,4 @@ Bomb install notes:
 ```
 
 Bomb final note:
-I simply made some changes to make it more realistic. Feel free to edit how you like. Also take a look at [These Changes](https://github.com/ZzBombardierzZ/A2Epoch_Logistic/blob/master/logistic/object/init.sqf#L28-L32) which if you uncomment, requires [this repo](https://github.com/oiad/scripts/tree/master/fnc_log). This may also cause more lag on the tow system, although I don't notice much, it probably could have been written better.
+I simply made some changes to make it more realistic. Feel free to edit how you like. Also take a look at [These Changes](https://github.com/ZzBombardierzZ/A2Epoch_Logistic/blob/master/logistic/object/init.sqf#L28-L32) which if you uncomment, requires [this repo](https://github.com/oiad/scripts/tree/master/fnc_log). My changes may also cause more lag on the tow system, although I don't notice much, it probably could have been written better.
