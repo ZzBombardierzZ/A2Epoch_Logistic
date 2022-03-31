@@ -33,7 +33,7 @@ Bomb changes:
 - A Large helicopter can lift small and tiny helicopters.
 - A Large helicopter can lift any ground vehicle, whereas a medium helicopter can only lift medium and smaller.
 - The airTug car (classname "TowingTractor" and other tractors) can tow any plane.
-- 
+- Most boats are considered 'medium' cars
 
 Bomb install notes:
 - Install logistic like normal (instructions above)
@@ -48,3 +48,6 @@ Bomb install notes:
         </Key>
 </Package>
 ```
+
+Bomb final note:
+I simply made some changes to make it more realistic. Feel free to edit how you like. Also take a look at [These Changes](https://github.com/ZzBombardierzZ/A2Epoch_Logistic/blob/master/logistic/object/init.sqf#L28-L32) which if you uncomment, requires [this repo](https://github.com/oiad/scripts/tree/master/fnc_log). This may also cause more lag on the tow system, although I don't notice much, it probably could have been written better.
