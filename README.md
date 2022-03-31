@@ -26,7 +26,7 @@ THIS====>>   call compile preprocessFileLineNumbers "logistic\init.sqf";   <<<==
 	
 enjoy  &&  have fun
 
-Bomb changes:
+#Bomb's changes:
 - Adds tiers of vehicles by estimated weight such as Large, Medium, Small, and Tiny for Ground and Air vehicles.
 - A vehicle can tow anything of it's own size or smaller. So a Large ground vehicle can tow any ground vehicle. A medium vehicle like an SUV can only tow other medium vehicles and smaller.
 - A tank can tow any ground vehicle BUT can not be lifted
