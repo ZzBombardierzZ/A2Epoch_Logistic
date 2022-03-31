@@ -34,6 +34,7 @@ enjoy  &&  have fun
 - A Large helicopter can lift any ground vehicle, whereas a medium helicopter can only lift medium and smaller.
 - The airTug car (classname "TowingTractor" and other tractors) can tow any plane.
 - Most boats are considered 'medium' cars
+- Automatically translates for english, german, and french players on a __per player__ basis. Previously the server developer had to choose one for all players.
 
 Bomb install notes:
 - This guide doesn't cover battleye filters
