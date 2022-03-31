@@ -1,3 +1,5 @@
+//modified by bomb
+
 if (LOG_INPROGRESS) then{
 [STR_LOG_INPROGRESS,COLOR_ERROR] call SAM_SAYS;
 } else {
@@ -14,15 +16,16 @@ LOG_INPROGRESS = true;
 					
 					_object setVariable ["LOG_moves_by", _tug, true];
 
-					player attachTo [_tug, [ 
-					(boundingBox _tug select 1 select 0),
-					(boundingBox _tug select 0 select 1) + 2, 
-					(boundingBox _tug select 0 select 2) - (boundingBox player select 0 select 2)]];
+					//player attachTo [_tug, [ 
+					//(boundingBox _tug select 1 select 0),
+					//(boundingBox _tug select 0 select 1) + 2, 
+					//(boundingBox _tug select 0 select 2) - (boundingBox player select 0 select 2)]];
 					sleep 0.2;
+					//_object lock true; //added
 					
-					player setDir 270;
-					player setPos (getPos player);
-					[player,"repair",0,false,20] call dayz_zombieSpeak;
+					//player setDir 270;
+					//player setPos (getPos player);
+					//[player,"repair",0,false,20] call dayz_zombieSpeak;
 					player playActionNow "Medic";
 					sleep 2;
 				
@@ -35,7 +38,7 @@ LOG_INPROGRESS = true;
 			
 				
 				LOG_OBJECT_SELECTION = objNull;
-				detach player;
+				//detach player;
 					
 				sleep 3;
 				[format [STR_LOG_ATTACHED, getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_SUCCESS] call SAM_SAYS;				
