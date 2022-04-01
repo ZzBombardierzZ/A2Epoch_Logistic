@@ -34,6 +34,8 @@ enjoy  &&  have fun
 - A Large helicopter can lift any ground vehicle, whereas a medium helicopter can only lift medium and smaller.
 - The airTug car (classname "TowingTractor" and other tractors) can tow any plane.
 - Most boats are considered 'medium' cars
+- Adds option to drop lifted vehicles when flying above 50 alt
+- If you drop a vehicle above 50 alt, it will get a parachute and smoke grenade attached. "ParachuteBigWest" if large vehicle, otherwise "ParachuteMediumWest"
 - Automatically translates for english, german, and french players on a __per player__ basis. Previously the server developer had to choose one for all players.
 
 Bomb install notes:
