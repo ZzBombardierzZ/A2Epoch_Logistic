@@ -38,22 +38,22 @@ if !(LOG_CFG_ALLOW_GETIN) then {
 //modified by bomb
 /*
 if ({_object isKindOf _x} count LOG_CFG_ISTOWABLE_TINY > 0) then{
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_TOW + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_UNTOW + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_TOW' + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_UNTOW' + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
 };
 if ({_object isKindOf _x} count LOG_CFG_ISTOWABLE_SMALL > 0) then{
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_TOW + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_UNTOW + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_TOW' + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_UNTOW' + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
 };
 if ({_object isKindOf _x} count LOG_CFG_ISTOWABLE_MEDIUM > 0) then{
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_TOW + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_UNTOW + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_TOW' + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_UNTOW' + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
 };*/
 if ({_object isKindOf _x} count LOG_CFG_ISTOWABLE_LARGE > 0) then{
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_TOW + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_UNTOW + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_TOW' + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_UNTOW' + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
 };
 if ({_object isKindOf _x} count LOG_CFG_ISTOWABLE_AIRTUG > 0) then{
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_TOW + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
-	_object addAction [("<t color='#dddd00'>" + STR_LOG_UNTOW + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_TOW' + "</t>"),"logistic\object\isSelected.sqf",[],5,false,true,"","LOG_OBJECT_ADDACTION == _target && LOG_OBJECT_TRAILER_VALID"];
+	_object addAction [("<t color='#dddd00'>" + localize 'STR_LOG_UNTOW' + "</t>"),"logistic\tow\detach.sqf",[],6,true,true,"","LOG_OBJECT_ADDACTION == _target && LOG_DETACH_VALID"];
 };

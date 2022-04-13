@@ -1,5 +1,5 @@
 if (LOG_INPROGRESS) then{
-[STR_LOG_INPROGRESS,COLOR_ERROR] call SAM_SAYS;
+[localize 'STR_LOG_INPROGRESS',COLOR_ERROR] call SAM_SAYS;
 } else {
 LOG_INPROGRESS = true;
 	private ["_heliporteur", "_object","_name"];
@@ -24,11 +24,11 @@ LOG_INPROGRESS = true;
 							_heliporteur setVariable ["LOG_heliporte", _object, true];
 							_object setVariable ["LOG_moves_by", _heliporteur, true];
 							_object attachTo [_heliporteur, [0,0,(boundingBox _heliporteur select 0 select 2) - (boundingBox _object select 0 select 2) - (getPos _heliporteur select 2) + 0.5]];
-							[ format [STR_LOG_ATTACHED,_name], COLOR_SUCCESS] call SAM_SAYS;
-						}else{ [ format [STR_LOG_CANT_LIFT_TOWING,_name],COLOR_ERROR] call SAM_SAYS;};
-					}else{[ format [STR_LOG_CANT_LIFT_MOVING,_name],COLOR_ERROR] call SAM_SAYS;};
-				}else{[ format [STR_LOG_CANT_LIFT_PLAYER,_name],COLOR_ERROR] call SAM_SAYS;};
-			}else{[ format [STR_LOG_ALREADY, _name],COLOR_ERROR] call SAM_SAYS;};
+							[ format [localize 'STR_LOG_ATTACHED',_name], COLOR_SUCCESS] call SAM_SAYS;
+						}else{ [ format [localize 'STR_LOG_CANT_LIFT_TOWING',_name],COLOR_ERROR] call SAM_SAYS;};
+					}else{[ format [localize 'STR_LOG_CANT_LIFT_MOVING',_name],COLOR_ERROR] call SAM_SAYS;};
+				}else{[ format [localize 'STR_LOG_CANT_LIFT_PLAYER',_name],COLOR_ERROR] call SAM_SAYS;};
+			}else{[ format [localize 'STR_LOG_ALREADY', _name],COLOR_ERROR] call SAM_SAYS;};
 		};
 	};
 LOG_INPROGRESS = false;

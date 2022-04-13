@@ -1,7 +1,7 @@
 //modified by bomb
 
 if (LOG_INPROGRESS) then {
-[STR_LOG_INPROGRESS,COLOR_ERROR] call SAM_SAYS;
+[localize 'STR_LOG_INPROGRESS',COLOR_ERROR] call SAM_SAYS;
 } else{
 LOG_INPROGRESS = true;
 	private ["_tug","_object"];
@@ -15,7 +15,7 @@ LOG_INPROGRESS = true;
 		sleep 3;
 		//_object lock false; //added
 		//_object setVehicleLock "unlocked"; //added to fix mission vehicles?
-		[format [STR_LOG_UNTOWED, getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_SUCCESS] call SAM_SAYS;
-	}else{[STR_LOG_IMPOSSIBLE_VEHICLE,COLOR_ERROR] call SAM_SAYS;};
+		[format [localize 'STR_LOG_UNTOWED', getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_SUCCESS] call SAM_SAYS;
+	}else{[localize 'STR_LOG_IMPOSSIBLE_VEHICLE',COLOR_ERROR] call SAM_SAYS;};
 LOG_INPROGRESS = false;
 };

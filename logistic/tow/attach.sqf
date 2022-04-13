@@ -1,7 +1,7 @@
 //modified by bomb
 
 if (LOG_INPROGRESS) then{
-[STR_LOG_INPROGRESS,COLOR_ERROR] call SAM_SAYS;
+[localize 'STR_LOG_INPROGRESS',COLOR_ERROR] call SAM_SAYS;
 } else {
 LOG_INPROGRESS = true;
 	private ["_object","_tug"];
@@ -41,9 +41,9 @@ LOG_INPROGRESS = true;
 				//detach player;
 					
 				sleep 3;
-				[format [STR_LOG_ATTACHED, getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_SUCCESS] call SAM_SAYS;				
-			}else{[format [STR_LOG_TOO_FAR, getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_ERROR] call SAM_SAYS;};
-		}else{[format [STR_LOG_IN_TRANSIT, getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_ERROR] call SAM_SAYS;};
+				[format [localize 'STR_LOG_ATTACHED', getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_SUCCESS] call SAM_SAYS;				
+			}else{[format [localize 'STR_LOG_TOO_FAR', getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_ERROR] call SAM_SAYS;};
+		}else{[format [localize 'STR_LOG_IN_TRANSIT', getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_ERROR] call SAM_SAYS;};
 	};
 LOG_INPROGRESS = false;
 };
