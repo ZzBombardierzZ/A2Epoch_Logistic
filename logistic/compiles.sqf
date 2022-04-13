@@ -1,7 +1,6 @@
 if (!isDedicated) then {
 
 	call compile preprocessFileLineNumbers "logistic\config.sqf";
-	call compile preprocessFileLineNumbers format ["logistic\lang\%1_lang.sqf", LOG_CFG_lANG];
 
 	MONI_OBJECT	= compile preprocessFileLineNumbers "logistic\monitor\monitor_object.sqf";
 	MONI_ACTION	= compile preprocessFileLineNumbers "logistic\monitor\monitor_action.sqf";
@@ -24,7 +23,7 @@ if (!isDedicated) then {
 		player playActionNow "Medic";
 		[player,"repair",0,false,20] call dayz_zombieSpeak;
 		[player,20,true,(getPosATL player)] spawn player_alertZombies;
-		diag_log format [STR_LOG_UNTOWED, typeOf _object];
+		diag_log format [localize 'STR_LOG_UNTOWED', typeOf _object];
 	};
 	
 	//added by bomb
@@ -45,7 +44,7 @@ if (!isDedicated) then {
 			//};
 		};
 		
-		diag_log format [STR_LOG_UNTOWED, typeOf _object];
+		diag_log format [localize 'STR_LOG_UNTOWED', typeOf _object];
 	};
 
 	LOG_FNCT_LOCKED = { 
