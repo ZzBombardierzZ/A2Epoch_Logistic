@@ -1,4 +1,4 @@
-# A2Epoch_Logistic
+# A2Epoch_Logistic (1.0.7.1+)
 
 LOGISTIC - TOW / LIFT
 
@@ -17,11 +17,18 @@ A SPECIAL THANKS GOES TO
 
 1.)  unpack  "zip" and copy the "logistic" folder to your "/MPMissions/DayZ_Epoch.Map" folder.
 
-2.)  open the "init.sqf" in your mission folder and add following on the top, after:   
+2.)  open the "init.sqf" in your mission folder and BELOW:   
 
-`call compile preprocessFileLineNumbers "server_traders.sqf"; `
+`execVM "\z\addons\dayz_code\system\antihack.sqf";`
 
-THIS====>>   `call compile preprocessFileLineNumbers "logistic\init.sqf"; `  <<<=========
+Add this: `call compile preprocessFileLineNumbers "logistic\init.sqf";`
+So that it looks like:
+~~~sqf
+	// Enables Plant lib fixes
+	execVM "\z\addons\dayz_code\system\antihack.sqf";
+	call compile preprocessFileLineNumbers "logistic\init.sqf";
+~~~
+
 	
 	
 enjoy  &&  have fun
@@ -36,22 +43,14 @@ enjoy  &&  have fun
 - Most boats are considered 'medium' cars
 - Adds option to drop lifted vehicles when flying above 50 alt
 - If you drop a vehicle above 50 alt, it will get a parachute and smoke grenade attached. "ParachuteBigWest" if large vehicle, otherwise "ParachuteMediumWest"
-- Automatically translates for english, german, and french players on a __per player__ basis. Previously the server developer had to choose one for all players.
+- ~~Automatically translates for english, german, and french players on a per player  basis. Previously the server developer had to choose one for all players.~~ Adds stringtable for previously supported languages.
 
-Bomb install notes:
+## Install notes:
 - This guide doesn't cover battleye filters
 - Install logistic like normal (instructions above)
+If you are using 1.0.7 and **not 1.0.7.1** do the following:
 - Install https://github.com/oiad/communityLocalizations if you haven't already.
-- Add the following below `<Project name="DayZ Community">`
-```
-<Package name="Logistic">
-		<Key ID="STR_LOG_CFG_LANG">
-            <English>en</English>
-            <German>de</German>
-            <French>fe</French>
-        </Key>
-</Package>
-```
+- Add the entire Logistic package found in the included stringtable.xml below `<Project name="DayZ Community">`
 
 Bomb final note:
 I simply made some changes to make it more realistic. Feel free to edit how you like. Also take a look at [These Changes](https://github.com/ZzBombardierzZ/A2Epoch_Logistic/blob/master/logistic/object/init.sqf#L28-L32) which if you uncomment, requires [this repo](https://github.com/oiad/scripts/tree/master/fnc_log). My changes may also cause more lag on the tow system, although I don't notice much, it probably could have been written better.
