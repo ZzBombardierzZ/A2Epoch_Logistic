@@ -48,6 +48,7 @@ enjoy  &&  have fun
 ## Install notes:
 - This guide doesn't cover battleye filters
 - Install logistic like normal (instructions above)
+
 If you are using 1.0.7 and **not 1.0.7.1** do the following:
 - Install https://github.com/oiad/communityLocalizations if you haven't already.
 - Add the entire Logistic package found in the included stringtable.xml below `<Project name="DayZ Community">`
