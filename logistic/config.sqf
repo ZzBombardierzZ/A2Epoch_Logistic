@@ -13,7 +13,6 @@
 #define MEDIUM_AIR "BAF_Merlin_HC3_D","AW159_Lynx_BAF","UH1Y","UH1H_base","UH1_Base","Ka60_GL_BASE_PMC","MV22","MH60S_DZ","UH60M_EP1","UH60M_MEV_EP1"		//,"UH60_Base","MH60S" //messes with CH53
 #define LARGE_AIR "Mi17_base","CH_47F_EP1","USEC_ch53_E"
 
-LOG_CFG_lANG = localize "STR_LOG_CFG_LANG"; 				/*  en = english , de = german , fr = french  */ //modified by bomb
 LOG_CFG_ALLOW_LOCKED = false;	 	/* allow to transport locked vehicles */
 LOG_CFG_ALLOW_CHAINING = false; 		/* allow chain towing  */
 LOG_CFG_ALLOW_GETIN = false; 		/* allow player to get into a towed / lifted object  */
