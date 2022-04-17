@@ -44,12 +44,13 @@ enjoy  &&  have fun
 - Adds option to drop lifted vehicles when flying above 50 alt
 - If you drop a vehicle above 50 alt, it will get a parachute and smoke grenade attached. "ParachuteBigWest" if large vehicle, otherwise "ParachuteMediumWest"
 - ~~Automatically translates for english, german, and french players on a per player  basis. Previously the server developer had to choose one for all players.~~ Adds stringtable for previously supported languages.
+- Adds Russian translations thanks to discord user Mandarin(Эгберт)#2067
 
 ## Install notes:
 - This guide doesn't cover battleye filters
 - Install logistic like normal (instructions above)
 
-If you are using 1.0.7 and **not 1.0.7.1** do the following:
+If you are using 1.0.7 or 1.0.7.1 __RC1__ and **not 1.0.7.1** do the following:
 - Install https://github.com/oiad/communityLocalizations if you haven't already.
 - Add the entire Logistic package found in the included stringtable.xml below `<Project name="DayZ Community">`
 
