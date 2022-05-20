@@ -45,6 +45,10 @@ enjoy  &&  have fun
 - If you drop a vehicle above 50 alt, it will get a parachute and smoke grenade attached. "ParachuteBigWest" if large vehicle, otherwise "ParachuteMediumWest"
 - ~~Automatically translates for english, german, and french players on a per player  basis. Previously the server developer had to choose one for all players.~~ Adds stringtable for previously supported languages.
 - Adds Russian translations thanks to discord user Mandarin(Эгберт)#2067
+- Adds option to require a magazine to tow a vehicle, with the option to also take that magazine and a third option to give the magazine back when the vehicle is untowed.
+- Adds option to require a tool/weapon to tow a vehicle, with the option to also take that tool/weapon and a third option to give the tool/weapon back when the vehicle is untowed.
+- Adds option to change the distance players can tow vehicles from.
+- Adds option hide the scroll wheel TOW option if the towable vehicle is not near a vehicle which can tow it.
 
 ## Install notes:
 - This guide doesn't cover battleye filters
