@@ -16,6 +16,16 @@ LOG_INPROGRESS = true;
 		//_object lock false; //added
 		//_object setVehicleLock "unlocked"; //added to fix mission vehicles?
 		[format [localize 'STR_LOG_UNTOWED', getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "displayName")],COLOR_SUCCESS] call SAM_SAYS;
+		if (LOG_CFG_CONSUME_MAGAZINE && LOG_CFG_RETURN_MAGAZINE) then {
+			//add magazine back to player inventory
+			player addMagazine LOG_CFG_REQUIRED_MAGAZINE;
+			systemchat format [localize 'STR_LOG_RETURNED_EQUIPMENT', getText(configFile >> "CfgMagazines" >> LOG_CFG_REQUIRED_MAGAZINE >> "displayName")];
+		};
+		if (LOG_CFG_CONSUME_TOOL && LOG_CFG_RETURN_TOOL) then {
+			//add weapon/tool back to player inventory
+			player addWeapon LOG_CFG_REQUIRED_TOOL;
+			systemchat format [localize 'STR_LOG_RETURNED_EQUIPMENT', getText(configFile >> "CfgWeapons" >> LOG_CFG_REQUIRED_TOOL >> "displayName")];
+		};
 	}else{[localize 'STR_LOG_IMPOSSIBLE_VEHICLE',COLOR_ERROR] call SAM_SAYS;};
 LOG_INPROGRESS = false;
 };

@@ -91,6 +91,12 @@ if (!isDedicated) then {
 	LOG_OBJECT_TRAILER_VALID = false;
 	LOG_DETACH_VALID = false;
 
+	if (LOG_CFG_HIDE_SCROLL_OPTION) then {
+		LOG_TRAILER_IS_NEAR_TOW_VEHICLE = false;
+	} else {
+		LOG_TRAILER_IS_NEAR_TOW_VEHICLE = true;
+	};
+
 	
 	COLOR_DEFAULT = [(51/255),(181/255),(229/255),1];
 	COLOR_SUCCESS = [(153/255),(204/255),0,1];

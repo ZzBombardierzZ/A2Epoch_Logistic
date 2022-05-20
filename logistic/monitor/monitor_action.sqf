@@ -12,6 +12,13 @@ while {true} do{
 			isNull LOG_OBJECT_MOVES && isNull (_target getVariable "LOG_moves_by") &&
 			(isNull (_target getVariable "LOG_moves_by") || (!alive (_target getVariable "LOG_moves_by"))) &&
 			!(_target getVariable "LOG_disabled") && ( [_target] call LOG_FNCT_LOCKED ) && ( [_target,2] call LOG_FNCT_CHAINING ) );
+
+			if (LOG_CFG_HIDE_SCROLL_OPTION) then {
+				LOG_TRAILER_IS_NEAR_TOW_VEHICLE = false;
+				if (count (nearestObjects [_target,LOG_CFG_CANTOW_TINY+LOG_CFG_CANTOW_SMALL+LOG_CFG_CANTOW_MEDIUM+LOG_CFG_CANTOW_LARGE,LOG_CFG_TOW_DISTANCE] - [_target]) > 0) then {
+					LOG_TRAILER_IS_NEAR_TOW_VEHICLE = true;
+				};
+			};
 			
 			LOG_DETACH_VALID = ( vehicle player == player && (isNull LOG_OBJECT_MOVES) && !isNull (_target getVariable "LOG_moves_by") && !(_target getVariable "LOG_disabled") );
 		} else {
@@ -21,6 +28,13 @@ while {true} do{
 				(isNull (_target getVariable "LOG_moves_by") || (!alive (_target getVariable "LOG_moves_by"))) &&
 				!(_target getVariable "LOG_disabled") && ( [_target] call LOG_FNCT_LOCKED ) && ( [_target,2] call LOG_FNCT_CHAINING ) );
 				
+				if (LOG_CFG_HIDE_SCROLL_OPTION) then {
+					LOG_TRAILER_IS_NEAR_TOW_VEHICLE = false;
+					if (count (nearestObjects [_target,LOG_CFG_CANTOW_SMALL+LOG_CFG_CANTOW_MEDIUM+LOG_CFG_CANTOW_LARGE,LOG_CFG_TOW_DISTANCE] - [_target]) > 0) then {
+						LOG_TRAILER_IS_NEAR_TOW_VEHICLE = true;
+					};
+				};
+
 				LOG_DETACH_VALID = ( vehicle player == player && (isNull LOG_OBJECT_MOVES) && !isNull (_target getVariable "LOG_moves_by") && !(_target getVariable "LOG_disabled") );
 			} else {
 				if ({_target isKindOf _x} count LOG_CFG_ISTOWABLE_MEDIUM > 0) then {
@@ -28,6 +42,13 @@ while {true} do{
 					isNull LOG_OBJECT_MOVES && isNull (_target getVariable "LOG_moves_by") &&
 					(isNull (_target getVariable "LOG_moves_by") || (!alive (_target getVariable "LOG_moves_by"))) &&
 					!(_target getVariable "LOG_disabled") && ( [_target] call LOG_FNCT_LOCKED ) && ( [_target,2] call LOG_FNCT_CHAINING ) );
+
+					if (LOG_CFG_HIDE_SCROLL_OPTION) then {
+						LOG_TRAILER_IS_NEAR_TOW_VEHICLE = false;
+						if (count (nearestObjects [_target,LOG_CFG_CANTOW_MEDIUM+LOG_CFG_CANTOW_LARGE,LOG_CFG_TOW_DISTANCE] - [_target]) > 0) then {
+							LOG_TRAILER_IS_NEAR_TOW_VEHICLE = true;
+						};
+					};
 					
 					LOG_DETACH_VALID = ( vehicle player == player && (isNull LOG_OBJECT_MOVES) && !isNull (_target getVariable "LOG_moves_by") && !(_target getVariable "LOG_disabled") );
 				} else {
@@ -36,6 +57,13 @@ while {true} do{
 						isNull LOG_OBJECT_MOVES && isNull (_target getVariable "LOG_moves_by") &&
 						(isNull (_target getVariable "LOG_moves_by") || (!alive (_target getVariable "LOG_moves_by"))) &&
 						!(_target getVariable "LOG_disabled") && ( [_target] call LOG_FNCT_LOCKED ) && ( [_target,2] call LOG_FNCT_CHAINING ) );
+
+						if (LOG_CFG_HIDE_SCROLL_OPTION) then {
+							LOG_TRAILER_IS_NEAR_TOW_VEHICLE = false;
+							if (count (nearestObjects [_target,LOG_CFG_CANTOW_LARGE,LOG_CFG_TOW_DISTANCE] - [_target]) > 0) then {
+								LOG_TRAILER_IS_NEAR_TOW_VEHICLE = true;
+							};
+						};
 						
 						LOG_DETACH_VALID = ( vehicle player == player && (isNull LOG_OBJECT_MOVES) && !isNull (_target getVariable "LOG_moves_by") && !(_target getVariable "LOG_disabled") );
 					};
