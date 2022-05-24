@@ -15,12 +15,8 @@ LOG_INPROGRESS = true;
 
 				if (LOG_CFG_REQUIRED_MAGAZINE != "") then {
 					//check if we have the required magazine
-					if (LOG_CFG_REQUIRED_MAGAZINE in magazines player) then{
+					if (LOG_CFG_REQUIRED_MAGAZINE in magazines player) then {
 						//You have it!
-						if (LOG_CFG_CONSUME_MAGAZINE) then {
-							//consume the magazine
-							player removeMagazine LOG_CFG_REQUIRED_MAGAZINE;
-						};
 					} else { //You don't have it :(
 						[format [localize 'STR_LOG_MISSING_EQUIPMENT', getText(configFile >> "CfgMagazines" >> LOG_CFG_REQUIRED_MAGAZINE >> "displayName")],COLOR_ERROR] call SAM_SAYS;
 						_continueTowing = false;
@@ -29,12 +25,8 @@ LOG_INPROGRESS = true;
 
 				if (LOG_CFG_REQUIRED_TOOL != "") then {
 					//check if we have the required tool/weapon
-					if (LOG_CFG_REQUIRED_TOOL in weapons player) then{
+					if (LOG_CFG_REQUIRED_TOOL in weapons player) then {
 						//You have it!
-						if (LOG_CFG_CONSUME_TOOL) then {
-							//consume the tool/weapon
-							player removeWeapon LOG_CFG_REQUIRED_TOOL;
-						};
 					} else { //You don't have it :(
 						[format [localize 'STR_LOG_MISSING_EQUIPMENT', getText(configFile >> "CfgWeapons" >> LOG_CFG_REQUIRED_TOOL >> "displayName")],COLOR_ERROR] call SAM_SAYS;
 						_continueTowing = false;
@@ -42,6 +34,14 @@ LOG_INPROGRESS = true;
 				};
 
 				if (_continueTowing) then {
+					//take the tool / item
+					if (LOG_CFG_CONSUME_TOOL && LOG_CFG_REQUIRED_TOOL != "") then {
+						player removeWeapon LOG_CFG_REQUIRED_TOOL; //consume the tool/weapon
+					};
+					if (LOG_CFG_CONSUME_MAGAZINE && LOG_CFG_REQUIRED_MAGAZINE != "") then {
+						player removeMagazine LOG_CFG_REQUIRED_MAGAZINE; //consume the magazine
+					};
+
 					_tug setVariable ["LOG_trailer", _object, true];
 						
 					_object setVariable ["LOG_moves_by", _tug, true];
