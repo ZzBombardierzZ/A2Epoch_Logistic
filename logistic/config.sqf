@@ -26,6 +26,9 @@ LOG_CFG_RETURN_TOOL = false; 		/* return item to player when vehicle is untowed 
 LOG_CFG_TOW_DISTANCE = 15; 			/* distance from vehicle to vehicle required to be towed. Recommended between 10 and 50... */
 LOG_CFG_HIDE_SCROLL_OPTION = false; 	/* hides the option to tow a vehicle unless near a vehicle which can tow it. Distance is calculated using LOG_CFG_TOW_DISTANCE */
 
+LOG_CFG_AIRTUG_TOW_DISTANCE = 25; 	/* distance from vehicle to vehicle required to be towed. Recommended between 10 and 50... */
+LOG_CFG_HIDE_SCROLL_OPTION_AIRTUG = false; 	/* hides the option to tow a vehicle unless near a vehicle which can tow it. Distance is calculated using LOG_CFG_TOW_DISTANCE */
+
 /*
 	LIST OF VEHICLES WHERE CAN TOW
 */ 
