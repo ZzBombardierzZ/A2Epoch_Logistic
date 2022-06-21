@@ -17,6 +17,8 @@ LOG_CFG_ALLOW_LOCKED = false;	 	/* allow to transport locked vehicles */
 LOG_CFG_ALLOW_CHAINING = false; 		/* allow chain towing  */
 LOG_CFG_ALLOW_GETIN = false; 		/* allow player to get into a towed / lifted object  */
 
+/////THE CONFIG OPTIONS BELOW MAY STILL HAVE ERRORS. PLEASE REPORT THEM TO ME IF YOU RUN INTO ANY ISSUES.../////
+
 LOG_CFG_REQUIRED_MAGAZINE = ""; 		/* magazine CLASSNAME required for tow/chain , example: "equip_rope" */
 LOG_CFG_CONSUME_MAGAZINE = true; 	/* consume magazine when tows vehicle */
 LOG_CFG_RETURN_MAGAZINE = true; 	/* return magazine to player when vehicle is untowed (only if consume is true) */
@@ -28,6 +30,8 @@ LOG_CFG_HIDE_SCROLL_OPTION = false; 	/* hides the option to tow a vehicle unless
 
 LOG_CFG_AIRTUG_TOW_DISTANCE = 25; 	/* distance from vehicle to vehicle required to be towed. Recommended between 10 and 50... */
 LOG_CFG_HIDE_SCROLL_OPTION_AIRTUG = false; 	/* hides the option to tow a vehicle unless near a vehicle which can tow it. Distance is calculated using LOG_CFG_TOW_DISTANCE */
+
+////END OF NEWLY ADDED (POSSIBLY BUGGY) CONFIG OPTIONS////
 
 /*
 	LIST OF VEHICLES WHERE CAN TOW
