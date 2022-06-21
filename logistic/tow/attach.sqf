@@ -11,8 +11,17 @@ LOG_INPROGRESS = true;
 	
 	if (!(isNull _object) && (alive _object) && !(_object getVariable "LOG_disabled")) then{	
 		if (isNull (_object getVariable "LOG_moves_by") && (isNull (_object getVariable "LOG_moves_by") || (!alive (_object getVariable "LOG_moves_by")))) then{
-			if ( _object distance _tug <= LOG_CFG_TOW_DISTANCE ) then{
+			if ( _object distance _tug <= LOG_CFG_TOW_DISTANCE ) then {
+				//pass
+			} else {
+				if ({_object isKindOf _x} count LOG_CFG_ISTOWABLE_AIRTUG > 0 &&  _object distance _tug <= LOG_CFG_AIRTUG_TOW_DISTANCE ) then {
+					//pass
+				} else {
+					_continueTowing = false; //fail
+				};
+			};
 
+			if (_continueTowing) then {	
 				if (LOG_CFG_REQUIRED_MAGAZINE != "") then {
 					//check if we have the required magazine
 					if (LOG_CFG_REQUIRED_MAGAZINE in magazines player) then {
