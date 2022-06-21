@@ -75,6 +75,13 @@ while {true} do{
 			isNull LOG_OBJECT_MOVES && isNull (_target getVariable "LOG_moves_by") &&
 			(isNull (_target getVariable "LOG_moves_by") || (!alive (_target getVariable "LOG_moves_by"))) &&
 			!(_target getVariable "LOG_disabled") && ( [_target] call LOG_FNCT_LOCKED ) && ( [_target,2] call LOG_FNCT_CHAINING ) );
+
+			if (LOG_CFG_HIDE_SCROLL_OPTION_AIRTUG) then {
+				LOG_TRAILER_IS_NEAR_TOW_VEHICLE = false;
+				if (count (nearestObjects [_target,LOG_CFG_CANTOW_AIRTUG,LOG_CFG_AIRTUG_TOW_DISTANCE] - [_target]) > 0) then {
+					LOG_TRAILER_IS_NEAR_TOW_VEHICLE = true;
+				};
+			};
 			
 			LOG_DETACH_VALID = ( vehicle player == player && (isNull LOG_OBJECT_MOVES) && !isNull (_target getVariable "LOG_moves_by") && !(_target getVariable "LOG_disabled") );
 		};
