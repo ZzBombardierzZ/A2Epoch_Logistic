@@ -155,6 +155,15 @@ if (!isDedicated) then {
 			} else {
 				publicVariableServer "PVDZ_veh_Save";
 			};
+		} else {
+			sleep 5;
+			PVDZ_veh_Save = [_cargo,"position",true];
+			//systemChat "Object saved";
+			if (isServer) then {
+				PVDZ_veh_Save call server_updateObject;
+			} else {
+				publicVariableServer "PVDZ_veh_Save";
+			};
 		};
 	};
 
