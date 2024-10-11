@@ -43,6 +43,15 @@ if (!isDedicated) then {
 				//[_carrier, _object, "ParachuteWest"] spawn BTC_paradrop;
 			//};
 		};
+
+		sleep 5;
+		PVDZ_veh_Save = [_object,"position",true];
+		//systemChat "Object saved";
+		if (isServer) then {
+			PVDZ_veh_Save call server_updateObject;
+		} else {
+			publicVariableServer "PVDZ_veh_Save";
+		};
 		
 		diag_log format [localize 'STR_LOG_UNTOWED', typeOf _object];
 	};
