@@ -19,7 +19,7 @@ if !(LOG_CFG_ALLOW_GETIN) then {
 				private ["_eject"];
 				_eject = false;
 				if ((!(isNull (_this select 0 getVariable "LOG_moves_by")) && (alive (_this select 0 getVariable "LOG_moves_by")))) then { _eject = true;};
-				if ((!(isNull (_this select 0 getVariable "LOG_heliporte")) && (alive (_this select 0 getVariable "LOG_heliporte")))) then { _eject = true;};
+				//if ((!(isNull (_this select 0 getVariable "LOG_heliporte")) && (alive (_this select 0 getVariable "LOG_heliporte")))) then { _eject = true;}; // We actually don't want this. We want to allow players to get into the transport/lifting helicopter, which LOG_heliporte is used to store the vehicle that the helicopter is carrying.
 				if (_eject) then{ 
 					player action ["eject", _this select 0]; 
 					systemChat "YOU ARE NOT ALLOWED IN A VEHICLE BEING TOWED!"; //added by bomb
