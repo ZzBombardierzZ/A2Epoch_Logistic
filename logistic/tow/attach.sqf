@@ -10,7 +10,7 @@ LOG_INPROGRESS = true;
 	local _continueTowing = true;
 	
 	if (!(isNull _object) && (alive _object) && !(_object getVariable "LOG_disabled")) then{	
-		if (isNull (_object getVariable "LOG_moves_by") && (isNull (_object getVariable "LOG_moves_by") || (!alive (_object getVariable "LOG_moves_by")))) then{
+		if (isNull (_object getVariable "LOG_moves_by")) then{
 			if ( _object distance _tug <= LOG_CFG_TOW_DISTANCE ) then {
 				//pass
 			} else {
