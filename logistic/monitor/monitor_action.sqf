@@ -35,8 +35,8 @@ while {true} do {
 		// ===================== ON FOOT: looking at a vehicle =====================
 		if (!isNull _target && {player distance _target < 13}) then {
 			LOG_OBJECT_ADDACTION = _target;
-			_mb        = _target getVariable "LOG_moves_by";
-			_disabledT = _target getVariable "LOG_disabled";
+			_mb        = _target getVariable ["LOG_moves_by", objNull];
+			_disabledT = _target getVariable ["LOG_disabled", false];
 
 			// ---- Can the target BE towed? (Tow / Untow options on it) ----
 			// Tier only decides the proximity list + hide flag (AIRTUG has precedence).
