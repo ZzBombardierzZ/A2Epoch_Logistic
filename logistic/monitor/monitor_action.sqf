@@ -109,18 +109,18 @@ while {true} do {
 			};
 
 			if (_isTug) then {
-				_targTrailer = _target getVariable "LOG_trailer";
+				_targTrailer = _target getVariable ["LOG_trailer", objNull];
 				_targStill   = (([0,0,0] distance velocity _target < 6) && (getPos _target select 2 < 2));
 				LOG_TRAILER_MOVE_VALID = (
 					(alive _target) && !isNull LOG_OBJECT_MOVES && (alive LOG_OBJECT_MOVES) &&
-					!(LOG_OBJECT_MOVES getVariable "LOG_disabled") &&
+					!(LOG_OBJECT_MOVES getVariable ["LOG_disabled", false]) &&
 					({LOG_OBJECT_MOVES isKindOf _x} count _istowList > 0) &&
 					isNull _targTrailer && _targStill && !_disabledT
 				);
 				LOG_TRAILER_SELECT_VALID = (
 					(alive _target) && isNull LOG_OBJECT_MOVES &&
 					!isNull LOG_OBJECT_SELECTION && (LOG_OBJECT_SELECTION != _target) &&
-					!(LOG_OBJECT_SELECTION getVariable "LOG_disabled") &&
+					!(LOG_OBJECT_SELECTION getVariable ["LOG_disabled", false]) &&
 					({LOG_OBJECT_SELECTION isKindOf _x} count _istowList > 0) &&
 					isNull _targTrailer && _targStill && !_disabledT &&
 					([_target] call LOG_FNCT_LOCKED) && ([_target,1] call LOG_FNCT_CHAINING)
@@ -152,17 +152,17 @@ while {true} do {
 
 		if (_isLifter) then {
 			LOG_OBJECT_ADDACTION = _lifter;
-			_hp  = _lifter getVariable "LOG_heliporte";
+			_hp  = _lifter getVariable ["LOG_heliporte", objNull];
 			_vel = ([0,0,0] distance velocity _lifter);
 			_alt = (getPos _lifter select 2);
 			LOG_HELI_LIFT_VALID = (
 				(driver _lifter == player) &&
-				({_x != _lifter && !(_x getVariable "LOG_disabled") && ([_x] call LOG_FNCT_LOCKED)} count (nearestObjects [_lifter, _islift, 10]) > 0) &&
-				isNull _hp && (_vel < 8) && (_alt > 1) && !(_lifter getVariable "LOG_disabled")
+				({_x != _lifter && !(_x getVariable ["LOG_disabled", false]) && ([_x] call LOG_FNCT_LOCKED)} count (nearestObjects [_lifter, _islift, 10]) > 0) &&
+				isNull _hp && (_vel < 8) && (_alt > 1) && !(_lifter getVariable ["LOG_disabled", false])
 			);
 			LOG_HELI_DROP_VALID = (
 				(driver _lifter == player) && !isNull _hp &&
-				(((_vel <= 10) && (_alt <= 20)) || (_alt >= 50)) && !(_lifter getVariable "LOG_disabled")
+				(((_vel <= 10) && (_alt <= 20)) || (_alt >= 50)) && !(_lifter getVariable ["LOG_disabled", false])
 			);
 		};
 	};
